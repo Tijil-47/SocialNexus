@@ -1,0 +1,72 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f0f4f8;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Custom styles with gradients */
+.bg-primary {
+  background: linear-gradient(to right, #4a90e2, #50e3c2);
+}
+
+.text-primary {
+  color: #4a90e2;
+}
+
+.bg-secondary {
+  background: linear-gradient(to right, #50e3c2, #4a90e2);
+}
+
+.text-secondary {
+  color: #50e3c2;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #4a90e2, #50e3c2);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #357ab7, #3bbf9e);
+}
+
+.btn-secondary {
+  background: linear-gradient(to right, #50e3c2, #4a90e2);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(to right, #3bbf9e, #357ab7);
+}
+header.shadow-lg {
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.mt-10 {
+   margin-top: 2.5rem; 
+}
+footer {
+   flex-shrink: 0; 
+  }
+
