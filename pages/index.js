@@ -2,6 +2,7 @@
 import Layout from '../Components/Layout';
 import Post from '../Components/Post';
 import Hero from '../Components/Hero';
+import CreatePost from '..Components/Createpost';
 
 const posts = [
   { id: 1, title: 'First Post', content: 'This is my first post!' },
@@ -11,6 +12,9 @@ const posts = [
 const HomePage = () => (
   <Layout>
     <Hero />
+    <div className="container mx-auto mt-10">
+        <CreatePost />
+    </div>
     <div className="container mx-auto p-4">
       <h2 className="text-3xl font-bold text-center mb-8">Latest Posts</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
