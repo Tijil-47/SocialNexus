@@ -1,9 +1,10 @@
-/// components/Header.js
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header = () => (
   <header className="bg-primary text-white py-4 shadow-lg">
     <div className="container mx-auto flex justify-between items-center">
+      <Image src="/images/favicon.png" alt="SocialNexus Logo" width={40} height={40} />
       <h1 className="text-3xl font-bold">SocialNexus</h1>
       <nav className="flex space-x-4">
         <Link href="/">

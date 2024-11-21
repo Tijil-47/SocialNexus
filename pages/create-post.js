@@ -1,9 +1,9 @@
+import Image from 'next/image';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faImage, faVideo, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import { faImage, faVideo, faSmile, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 const CreatePost = () => {
-  const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
   const [video, setVideo] = useState(null);
@@ -22,69 +22,53 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-6 rounded shadow-md w-full max-w-sm">
-        <h2 className="text-2xl font-bold mb-6 text-center">Create Post</h2>
-        <form onSubmit={handleCreatePost}>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="title">
-              <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
-              Title
+    <div className="bg-white p-4 rounded shadow-md w-full max-w-md mx-auto">
+      <form onSubmit={handleCreatePost}>
+        <div className="flex items-center space-x-3 mb-4">
+          <Image src="/images/pic1.jpg" alt="Profile" width={40} height={40} className="w-10 h-10 rounded-full" />
+          <input
+            type="text"
+            className="flex-grow bg-gray-100 p-2 rounded-full border border-gray-300 focus:outline-none"
+            placeholder="What's on your mind?"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
+        </div>
+        <div className="flex items-center justify-between mt-2">
+          <div className="flex space-x-4">
+            <label htmlFor="image" className="flex items-center space-x-2 cursor-pointer">
+              <FontAwesomeIcon icon={faImage} className="text-blue-500" />
+              <span className="text-sm">Photo</span>
+              <input
+                type="file"
+                id="image"
+                className="hidden"
+                onChange={handleImageChange}
+              />
             </label>
-            <input
-              type="text"
-              id="title"
-              className="w-full p-2 border border-gray-300 rounded"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder="Enter the post title"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="content">
-              <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
-              Content
+            <label htmlFor="video" className="flex items-center space-x-2 cursor-pointer">
+              <FontAwesomeIcon icon={faVideo} className="text-blue-500" />
+              <span className="text-sm">Video</span>
+              <input
+                type="file"
+                id="video"
+                className="hidden"
+                onChange={handleVideoChange}
+              />
             </label>
-            <textarea
-              id="content"
-              className="w-full p-2 border border-gray-300 rounded"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              placeholder="Enter the post content"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="image">
-              <FontAwesomeIcon icon={faImage} className="mr-2" />
-              Image
-            </label>
-            <input
-              type="file"
-              id="image"
-              className="w-full p-2 border border-gray-300 rounded"
-              onChange={handleImageChange}
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="video">
-              <FontAwesomeIcon icon={faVideo} className="mr-2" />
-              Video
-            </label>
-            <input
-              type="file"
-              id="video"
-              className="w-full p-2 border border-gray-300 rounded"
-              onChange={handleVideoChange}
-            />
+            <button type="button" className="flex items-center space-x-2 cursor-pointer">
+              <FontAwesomeIcon icon={faSmile} className="text-yellow-500" />
+              <span className="text-sm">Feeling/Activity</span>
+            </button>
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full"
           >
-            Create Post
+            Post
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 };

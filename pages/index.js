@@ -2,7 +2,7 @@
 import Layout from '../Components/Layout';
 import Post from '../Components/Post';
 import Hero from '../Components/Hero';
-import CreatePost from '..Components/Createpost';
+import CreatePost from '../Components/CreatePost';
 
 const posts = [
   { id: 1, title: 'First Post', content: 'This is my first post!' },
