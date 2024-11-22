@@ -2,6 +2,7 @@
 import Layout from '../Components/Layout';
 import Post from '../Components/Post';
 import Hero from '../Components/Hero';
+import GraphicSection from '../Components/GraphicSection';
 import CreatePost from '../Components/CreatePost';
 
 const posts = [
@@ -12,6 +13,9 @@ const posts = [
 const HomePage = () => (
   <Layout>
     <Hero />
+    <div className="container mx-auto mt-10">
+       <GraphicSection />
+    </div>
     <div className="container mx-auto mt-10">
         <CreatePost />
     </div>
